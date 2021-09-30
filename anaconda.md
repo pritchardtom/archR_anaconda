@@ -20,7 +20,7 @@ If you have any issues with Anaconda that are not covered in this guide, please 
     - [Common Commands](#common-commands)
     - [Using pip and Other Package Managers](#using-pip-and-other-package-managers)
       - [Example: Using pip to install TensorFlow](#example-using-pip-to-install-tensorflow)
-      - [No need for pip install --user](#no-need-for-pip-install-user)
+      - [No need for pip install user](#no-need-for-pip-install-user)
   - [Common Issues and Troubleshooting](#common-issues-and-troubleshooting)
     - [Disk and File Space Errors ](#disk-and-file-space-errors)
       - [Potential Solutions](#potential-solutions)
