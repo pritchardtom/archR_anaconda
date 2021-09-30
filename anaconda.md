@@ -18,4 +18,9 @@ Anaconda, while useful to some, will not be required by all SCW users who requir
 
 | Scenario | Recommended Solution |
 | -------- | -------------------- |
-| Python version is installed, but need Python packages not installed on SCW. | Use `pip -u` <package_name> or `virtualenv` if isolation required. |
+| Python version is installed but need Python packages not installed on SCW. | Use `pip -u` <package_name> or `virtualenv` if isolation required. |
+| Python version is installed but need Python and non-Python packages not installed | Use Anaconda. |
+| Python required is not installed, but still only need Python packages | Use Anaconda, or install Python manually in `$HOME` and use `pip`. |
+| Python required not installed, but need Python and non-Python packages | Use Anaconda. |
+| Require management of Python and non-Python languages/packages | Use Anaconda. |
+| Require isolation to install Python packages | Use `pip` + `virtualenv/venv` or Anaconda. |
