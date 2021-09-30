@@ -6,7 +6,7 @@ If you have any issues with Anaconda that are not covered in this guide, please 
 
 ## Contents
   - [Introduction to Anaconda](#introduction-to-anaconda)
-   - [What is Anaconda?](##what-is-anaconda?)
+    - [What is Anaconda?](#what-is-anaconda)?
 
 ## Introduction to Anaconda
 
