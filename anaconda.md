@@ -32,7 +32,7 @@ If you have any issues with Anaconda that are not covered in this guide, please 
 
 ## Introduction to Anaconda
 
-If you are already familiar with Anaconda, please skip to the
+If you are already familiar with Anaconda, please skip to the [Using Anaconda on SCW](#using-anaconda-on-scw) section.
 
 ### What is Anaconda?
 
