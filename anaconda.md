@@ -5,7 +5,8 @@ This guide provides a brief overview of Anaconda, and how to use it on Hawk or S
 If you have any issues with Anaconda that are not covered in this guide, please login to [MySCW](https://scw.bangor.ac.uk/en/) and select the *Submit Support Ticket* option.  Provide as much information as you can, and one of the support team will provide assistance with your Anaconda problem.
 
 ## Contents
- - [Introduction to Anaconda](#introduction-to-anaconda) 
+  - [Introduction to Anaconda](#introduction-to-anaconda)
+   - [What is Anaconda?](#what-is-anaconda?)
 
 ## Introduction to Anaconda
 
