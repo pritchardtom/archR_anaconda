@@ -15,3 +15,7 @@ Conda is a package and virtual environment manager, which comes bundled with the
 ## When to use Anaconda
 
 Anaconda, while useful to some, will not be required by all SCW users who require Python and other packages.  Where applicable, SCW users should try to make use of the existing software available on SCW before using Anaconda.
+
+| Scenario | Recommended Solution |
+| -------- | -------------------- |
+| Python version is installed, but need Python packages not installed on SCW. | Use `pip -u` or `virtualenv` if isolation required. |
