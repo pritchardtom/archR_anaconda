@@ -12,6 +12,12 @@ If you have any issues with Anaconda that are not covered in this guide, please 
  - [Using Anaconda on SCW](#using-anaconda-on-scw)
    - [Loading Anaconda](#loading-anaconda)
    - [Creating a New Conda Environment](#creating-a-new-conda-environment)
+     - [Example: Creating a TensorFlow CPU Environment](#example-creating-a-tensorflow-cpu-environment)
+   - [Loading an Existing Conda Environment](#loading-an-existing-conda-environment)
+     - [Example: Loading The TensorFlow CPU Environment](#example-loading-the-tensorflow-cpu-environment)
+   - [Leaving a Conda Environment](#leaving-a-conda-environment)
+  - [Managing Conda Packages and Environments](#managing-conda-packages-and-environments)
+    - [Common Commands](#common-commands)
 
 ## Introduction to Anaconda
 
@@ -72,10 +78,177 @@ anaconda/2019.03  anaconda/2020.07  anaconda/2021.05  anaconda/3
 **Please Note:** Users are unable to write to the `base` environment, so attempting a command like `conda install numpy` here will result in errors.  Users must create or activate an existing conda environment before continuing.
 
 
-###Creating a New Conda Environment
+### Creating a New Conda Environment
 
 Once you have loaded Anaconda, you can create a new conda environment with the following command:
 
 ```
 conda create -n <name_of_env> <packages_to_install>
+```
+
+Where:
+
+- `<name_of_env>` is the name you'd like to give your conda env; and,
+- `<packages_to_install>` are a list of conda packages you want installed into this new conda environment.
+
+**Please Note:** Conda environments will be installed under: `/home/$USER/.conda/`.
+
+**Please Note:** It is advisable to run the `myquota` command from your SCW Terminal prior to creating a conda environment/installing packages, and ensure you have enough disk/file capacity.  See the {\bf Common Issues} section for more information.
+
+Once all the packages/dependencies have installed you need to activate your new conda environment in order to use it:
+
+```
+conda activate <name_of_env>
+```
+
+If everything worked correctly, your Terminal should now reflect this activation by looking similar to:
+
+```
+(<name_of_env>) [s.a.user@sl1]$
+```
+
+**Please Note:** It is good practice to run the following command once your conda environment is set up correctly:
+
+```
+conda clean -a
+```
+
+This will remove all unused packages/tarballs/files, and will help reduce any potential issues with users exceeding file/disk usage quotas.
+
+We will now use these commands to create a TensorFlow conda environment.
+
+
+#### Example: Creating a TensorFlow (CPU) Environment}
+
+We will make use of the above commands to create a new conda environment called {\bf tenflow}, which will install: \emph{Python 3.6}, \emph{TensorFlow}, \emph{Pandas}, and \emph{Keras}:
+
+```
+#if not already done:
+module load anaconda/2021.05
+source activate
+
+#create new conda environment (accept prompt & wait for
+#packages/dependencies to download & install):
+conda create -n tenflow python=3.6 tensorflow pandas keras
+
+#activate new conda env:
+conda activate tenflow
+
+#Terminal prompt should now look like this:
+(tenflow) [s.a.user@sl1]$
+
+#clean up install (accept prompt & wait for process to end):
+conda clean -a
+```
+
+You are now ready to use TensorFlow within your new conda environment.
+
+**Please Note:** You can specify specific package versions, as we did in the example above for Python, or allow conda to get the default version.
+
+### Loading an Existing Conda Environment
+
+If you already have a conda environment you wish to load, there is no need to use the `conda create` command used above.  Instead, the following should be executed:
+
+```
+#use this to get a list of your conda envs (optional)
+#useful if forgotten name of your conda env(s):
+conda info -e
+
+#activate the conda environment of your choice:
+conda activate <env_name>
+
+#Terminal prompt should now look like this:
+(<env_name>) [s.a.user@sl1]$
+```
+
+#### Example: Loading The TensorFlow CPU Environment
+
+We will now load the TensorFlow environment we created earlier `tenflow`.
+
+```
+#already know the conda env name, so:
+conda activate tenflow
+
+#Terminal prompt should now look like this:
+(tenflow) [s.a.user@sl1]$
+```
+
+You are now ready to use your TensorFlow conda environment.
+
+### Leaving a Conda Environment
+
+To leave a conda environment, simply execute the following command:
+
+```
+ conda deactivate
+```
+
+Anaconda keeps track of all the environments you've activated, and will cycle back through them with each `conda deactivate` you execute.  For example:
+
+```
+#we start in base by default:
+(base) [s.a.user@sl1]$
+
+#we load first environment:
+conda activate my_env1
+(my_env1) [s.a.user@sl1]$
+
+#we load second environment:
+conda activate my_env2
+(my_env2) [s.a.user@sl1]$
+
+#when we run conda deactivate, we return to my_env1:
+conda deactivate
+(my_env1) [s.a.user@sl1]$
+
+#running conda deactivate for a second time:
+#returns us to base:
+conda deactivate
+(base) [s.a.user@sl1]$
+```
+
+`conda config --append channels conda-forge!`
+
+
+## Managing Conda Packages and Environments
+
+Below are some common commands to assist in the management of conda packages and environments.
+
+### Common Commands
+| Command | Description |
+| ------- | ----------- |
+| conda list | lists all installed pkgs in conda |
+| conda list -n <env_name> | lists all installed pkgs in <env_name> |
+| conda list -n <env_name> <pkg> | check if <pkg> installed in <env_name> |
+| conda search <pkg> | search for <pkg> |
+| conda install <pkg> | install <pkg> |
+| conda install <pkg=ver> | install specific ver of <pkg> |
+| conda update <pkg> | updates <pkg> |
+| conda remove <pkg> | remove <pkg> from current env |
+| conda remove <pkg1 pkg2...> | remove multiple pkgs from current env |
+| conda remove -n <env_name> <pkg> | remove pkgs from specific env |
+| conda remove -n <env_name> --all | remove/delete conda env <env_name> |
+| conda -V | returns version of Conda |
+| conda info | returns summary of Conda install |
+| conda info -e | lists all your conda envs |
+| conda create <env_name> <pkgs> | create conda env/install pkgs |
+| conda activate <env_name> | activate <env_name> |
+| conda deactivate | exits current conda env |
+
+
+### Using pip and Other Package Managers
+
+Some software packages are not available as conda recipes.  However, we can still use conda environments to create a sandbox for the various software you require, and use pip or other package managers to install them in this environment.
+
+#### Example: Using pip to install TensorFlow
+
+Whilst TensorFlow is available as a conda recipe, there is often a delay in the latest releases appearing in conda, so in this example we will use pip to install TensorFlow to a new conda environment:
+
+```
+module load anaconda/2021.05
+source activate
+
+conda create -n pip_test python=3.7
+conda activate pip_test
+pip install tensorflow
 ```
