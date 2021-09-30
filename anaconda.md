@@ -264,7 +264,7 @@ conda activate pip_test
 pip install tensorflow
 ```
 
-#### No need for `pip install --user`
+#### No need for pip install user
 
 When typically using pip on SCW, users have to provide the `--user` flag to install packages in their `$HOME/.local` directory.  This is because, by default, pip will install packages to a location users do not have write permissions.
 
