@@ -18,4 +18,4 @@ Anaconda, while useful to some, will not be required by all SCW users who requir
 
 | Scenario | Recommended Solution |
 | -------- | -------------------- |
-| Python version is installed, but need Python packages not installed on SCW. | Use `pip -u` or `virtualenv` if isolation required. |
+| Python version is installed, but need Python packages not installed on SCW. | Use `pip -u` <package_name> or `virtualenv` if isolation required. |
