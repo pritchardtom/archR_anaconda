@@ -8,7 +8,7 @@ If you have any issues with Anaconda that are not covered in this guide, please 
  - [Introduction to Anaconda and Conda](#introduction-to-anaconda-and-conda)
  - [Using Anaconda on SCW](#using-anaconda-on-scw)
    - [Before you Start: Check Available Anaconda Versions](#before-you-start-check-available-anaconda-versions)
-   - [Before you Start: Check your File Quota Limits](#check-file-quota-limits)
+   - [Before you Start: Check your File Quota Limits](#before-you-start-check-your-file-quota-limits)
    - [Loading Anaconda](#loading-anaconda)
    - [Creating a New Conda Environment](#creating-a-new-conda-environment)
      - [Example: Creating a TensorFlow CPU Environment](#example-creating-a-tensorflow-cpu-environment)
@@ -44,7 +44,7 @@ Before you start using Anaconda there are two issues you should be aware of:
 1. Anaconda versions might be updated more regularly on Hawk/Sunbird than this documentation; and
 2. Creating an Anaconda environment uses a large number of files, and may fail if you exceed your file quota limits.
 
-### Before you Start - Check Available Anaconda Versions
+### Before you Start: Check Available Anaconda Versions
 
 To check which versions of Anaconda are available on Hawk/Sunbird, type `module load anaconda/` on the login node and press the `TAB` key twice.  This should produce an output of all the available versions of Anaconda.  For example:
 
@@ -57,7 +57,7 @@ You should then proceed to load the latest version of Anaconda, which in this in
 
 > **Please Note:** If you require a newer version of Anaconda than those installed, please submit a [Support Ticket](https://portal.supercomputing.wales/index.php/index/submit-support-ticket/).
 
-### Before you Start - Check your File Quota Limits
+### Before you Start: Check your File Quota Limits
 
 - Check quota first and advise on outputs and what to do as result.
 - I would explicitly say that conda environments use a large number of files, and it is not unreasonable that it pushes you over quota.
