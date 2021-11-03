@@ -68,7 +68,7 @@ If everything is successful, your Terminal prompt should now look like this:
 anaconda/2019.03  anaconda/2020.07  anaconda/2021.05  anaconda/3
 ```
 
-**Please Note:** Users are unable to write to the `base` environment, so attempting a command like `conda install numpy` here will result in errors.  Users must create or activate an existing conda environment before continuing.
+> **Please Note:** Users are unable to write to the `base` environment, so attempting a command like `conda install numpy` here will result in errors.  Users must create or activate an existing conda environment before continuing.
 
 ### Creating a New Conda Environment
 
