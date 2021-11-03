@@ -5,10 +5,10 @@ This guide provides a brief overview of Anaconda, and how to use it on Hawk or S
 If you have any issues with Anaconda that are not covered in this guide, please submit a [Support Ticket](https://portal.supercomputing.wales/index.php/index/submit-support-ticket/), and one of the team will provide assistance.
 
 ## Table of Contents
- - [Introduction to Anaconda](#introduction-to-anaconda)
-   - [What is Anaconda?](#what-is-anaconda)
-   - [What is Conda?](#what-is-conda)
+ - [Introduction to Anaconda and Conda](#introduction-to-anaconda-and-conda)
  - [Using Anaconda on SCW](#using-anaconda-on-scw)
+   - [Before you Start: Check Available Anaconda Versions](#check-available-anaconda-versions)
+   - [Before you Start: Check your File Quota Limits](#check-file-quota-limits)
    - [Loading Anaconda](#loading-anaconda)
    - [Creating a New Conda Environment](#creating-a-new-conda-environment)
      - [Example: Creating a TensorFlow CPU Environment](#example-creating-a-tensorflow-cpu-environment)
@@ -29,23 +29,38 @@ If you have any issues with Anaconda that are not covered in this guide, please 
       - [Potential Solutions](#potential-solutions)
     - [Conda Channels](#conda-channels)
 
-## Introduction to Anaconda
-
-If you are already familiar with Anaconda, please skip to the [Using Anaconda on SCW](#using-anaconda-on-scw) section.
-
-### What is Anaconda?
+## Introduction to Anaconda and Conda
 
 Anaconda is a distribution of Python, R, Conda, and a suite of 1500 packages focused on aiding scientific computing, and simplifying package management and virtual environments.
 
-### What is Conda?
-
 Conda is a package and virtual environment manager, which comes bundled with the Anaconda distribution.  Conda can manage packages and dependencies within any language, not just Python, and it is often equated with `yum` or `apt` as a result.
 
-A conda environment is a directory that contains the specific collection of packages you have installed.  If you change one environment, your others are unaffected.
+A conda environment is a directory that contains the specific collection of packages you have installed.  If you change one environment, the others are unaffected.
 
 ## Using Anaconda on SCW
 
-These instructions should work on Hawk and Sunbird.
+Before you start using Anaconda there are two issues you should be aware of:
+
+1. Anaconda versions might be updated more regularly on Hawk/Sunbird than this documentation; and
+2. Creating an Anaconda environment uses a large number of files, and may fail if you exceed your file quota limits.
+
+### Before you Start - Check Available Anaconda Versions
+
+To check which versions of Anaconda are available on Hawk/Sunbird, type `module load anaconda/` on the login node and press the `TAB` key twice.  This should produce an output of all the available versions of Anaconda.  For example:
+
+```
+[a.user@sl2 ~]$ module load anaconda/
+anaconda/2019.03  anaconda/2020.07  anaconda/2021.05  anaconda/3
+```
+
+You should then proceed to load the latest version of Anaconda, which in this instance is `2021.05`.
+
+> **Please Note:** If you require a newer version of Anaconda than those installed, please submit a [Support Ticket](https://portal.supercomputing.wales/index.php/index/submit-support-ticket/).
+
+### Before you Start - Check your File Quota Limits
+
+- Check quota first and advise on outputs and what to do as result.
+- I would explicitly say that conda environments use a large number of files, and it is not unreasonable that it pushes you over quota.
 
 ### Loading Anaconda
 
@@ -62,13 +77,9 @@ If everything is successful, your Terminal prompt should now look like this:
 (base) [s.a.user@sl1]$
 ```
 
-**Please Note:** The version of Anaconda on Hawk/Sunbird might be updated more regularly than this documentation.  If in doubt as to which version is the latest on the system, please type `module load anaconda` on the login node and press the `TAB` key twice.  This should produce an output of all the available versions of Anaconda.  For example:
 
-```
-anaconda/2019.03  anaconda/2020.07  anaconda/2021.05  anaconda/3
-```
 
-> **Please Note:** Users are unable to write to the `base` environment, so attempting a command like `conda install numpy` here will result in errors.  Users must create or activate an existing conda environment before continuing.
+> **Please Note:** You are unable to write to the `base` environment, so attempting a command like `conda install numpy` here will result in errors.  You must create or activate an existing conda environment before continuing.
 
 ### Creating a New Conda Environment
 
