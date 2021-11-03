@@ -42,7 +42,7 @@ A conda environment is a directory that contains the specific collection of pack
 Before you start using Anaconda there are two issues you should be aware of:
 
 1. Anaconda versions might be updated more regularly on Hawk/Sunbird than this documentation; and
-2. Creating an Anaconda environment uses a large number of files, and may fail if you exceed your file quota limits.
+2. Creating a conda environment uses a large number of files, and may fail if you exceed your file quota limits.
 
 ### Before you Start: Check Available Anaconda Versions
 
@@ -52,15 +52,33 @@ To check which versions of Anaconda are available on Hawk/Sunbird, type `module 
 [a.user@sl2 ~]$ module load anaconda/
 anaconda/2019.03  anaconda/2020.07  anaconda/2021.05  anaconda/3
 ```
-You should then proceed to load the latest version of Anaconda, which in this instance is `2021.05`.
 
+You should then proceed to load the latest version of Anaconda, which in this instance is `2021.05`.
 
 > **Please Note:** If you require a newer version of Anaconda than those installed, please submit a [Support Ticket](https://portal.supercomputing.wales/index.php/index/submit-support-ticket/).
 
 ### Before you Start: Check your File Quota Limits
 
-- Check quota first and advise on outputs and what to do as result.
-- I would explicitly say that conda environments use a large number of files, and it is not unreasonable that it pushes you over quota.
+Creating a new conda environment can add thousands of files to your account, and will fail if you exceed your quota limits.  You should, therefore, check the status of your current quota limits before attempting to create a new conda environment.  You can do this by executing the `myquota` command when logged in to Hawk/Sunbird, which will produce output similar to below:
+
+```
+[a.user@sl2 ~]$ myquota
+HOME DIRECTORY a.user
+     Filesystem    used   quota   limit   grace   files   quota   limit   grace
+    /lustrehome   1.02G    100G    105G       -    8900  100000  100000       -
+```
+
+In the above example, `a.user` has approximately 99G of space left and over 90,000 files of their quota allowance remaining.  It is unlikely that creating a conda environment would fail for this user.  Let's consider one more example:
+
+```
+[b.user@sl2 ~]$ myquota
+HOME DIRECTORY b.user
+     Filesystem    used   quota   limit   grace   files   quota   limit   grace
+    /lustrehome   99.6G    100G    105G       -   99931  100000  100000       -
+```
+
+In this example, `b.user` is very close to both the storage capacity used *(99.6G)* and the number of files *(99931)* permitted.  It is almost certain that creating a conda environment would fail for this user.
+
 
 ### Loading Anaconda
 
