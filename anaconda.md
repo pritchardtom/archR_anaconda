@@ -52,8 +52,8 @@ To check which versions of Anaconda are available on Hawk/Sunbird, type `module 
 [a.user@sl2 ~]$ module load anaconda/
 anaconda/2019.03  anaconda/2020.07  anaconda/2021.05  anaconda/3
 ```
-
 You should then proceed to load the latest version of Anaconda, which in this instance is `2021.05`.
+
 
 > **Please Note:** If you require a newer version of Anaconda than those installed, please submit a [Support Ticket](https://portal.supercomputing.wales/index.php/index/submit-support-ticket/).
 
