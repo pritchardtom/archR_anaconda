@@ -7,7 +7,7 @@ If you have any issues with Anaconda that are not covered in this guide, please 
 ## Table of Contents
  - [Introduction to Anaconda and Conda](#introduction-to-anaconda-and-conda)
  - [Using Anaconda on SCW](#using-anaconda-on-scw)
-   - [Before you Start: Check Available Anaconda Versions](#check-available-anaconda-versions)
+   - [Before you Start: Check Available Anaconda Versions](#before-you-start-check-available-anaconda-versions)
    - [Before you Start: Check your File Quota Limits](#check-file-quota-limits)
    - [Loading Anaconda](#loading-anaconda)
    - [Creating a New Conda Environment](#creating-a-new-conda-environment)
