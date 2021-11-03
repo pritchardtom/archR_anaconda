@@ -79,7 +79,7 @@ HOME DIRECTORY b.user
 
 In this example, `b.user` is very close to both the storage capacity used *(99.6G)* and the number of files *(99931)* permitted.  It is almost certain that creating a conda environment would fail for this user.
 
-> **Message to Self:** What to recommend here for users similar to b.user?  Use /scratch, request extension, delete files, and so on  Put that information here, or link to section below?
+> **Message to Self:** What to recommend here for users similar to b.user?  Use /scratch, request extension, delete files, and so on...  Put that information here, or link to section below?
 
 ### Loading Anaconda
 
@@ -96,7 +96,7 @@ If everything is successful, your Terminal prompt should now look like this:
 (base) [s.a.user@sl1]$
 ```
 
-
+You are now ready to create a new conda environment, or load an existing one.
 
 > **Please Note:** You are unable to write to the `base` environment, so attempting a command like `conda install numpy` here will result in errors.  You must create or activate an existing conda environment before continuing.
 
@@ -113,9 +113,7 @@ Where:
 - `<name_of_env>` is the name you'd like to give your conda env; and,
 - `<packages_to_install>` are a list of conda packages you want installed into this new conda environment.
 
-**Please Note:** Conda environments will be installed under: `/home/$USER/.conda/`.
-
-**Please Note:** It is advisable to run the `myquota` command from your SCW Terminal prior to creating a conda environment/installing packages, and ensure you have enough disk/file capacity.  See the {\bf Common Issues} section for more information.
+> **Please Note:** By default conda environments will be installed under: `/home/$USER/.conda/`
 
 Once all the packages/dependencies have installed you need to activate your new conda environment in order to use it:
 
@@ -129,7 +127,7 @@ If everything worked correctly, your Terminal should now reflect this activation
 (<name_of_env>) [s.a.user@sl1]$
 ```
 
-**Please Note:** It is good practice to run the following command once your conda environment is set up correctly:
+> **Please Note:** It is good practice to run the following command once your conda environment is set up correctly:
 
 ```
 conda clean -a
@@ -168,7 +166,7 @@ conda clean -a
 
 You are now ready to use TensorFlow within your new conda environment.
 
-**Please Note:** You can specify specific package versions, as we did in the example above for Python, or allow conda to get the default versions that are compatible with all the packages and dependencies.  
+> **Please Note:** You can specify specific package versions, as we did in the example above for Python, or allow conda to get the default versions that are compatible with all the packages and dependencies.  
 
 ### Loading an Existing Conda Environment
 
@@ -236,7 +234,7 @@ conda deactivate
 
 ## Managing Conda Packages and Environments
 
-Below are some common commands to assist in the management of conda packages and environments.
+Below are some common commands to assist you in the management of conda packages and environments.
 
 ### Common Commands
 | Command | Description |
