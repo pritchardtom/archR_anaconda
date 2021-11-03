@@ -79,6 +79,7 @@ HOME DIRECTORY b.user
 
 In this example, `b.user` is very close to both the storage capacity used *(99.6G)* and the number of files *(99931)* permitted.  It is almost certain that creating a conda environment would fail for this user.
 
+> **Message to Self:** What to recommend here for users similar to b.user?  Use /scratch, request extension, delete files, and so on  Put that information here, or link to section below?
 
 ### Loading Anaconda
 
